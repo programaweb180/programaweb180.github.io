@@ -16,130 +16,131 @@
     <script src="js/init.js"></script>
   </head>
   <body>
+    
+<h1>Registro para la vacunación a estudiantes Universitarios Covid-19 2021</h1>
+<form id="forma"action="javascript:">
+  <p><em>Formulario de registro.</em></p>
+  <p>
+    <label accesskey="N">
+      Nombre <br>
+      <input name="nombre" type="text" autofocus pattern=".{1,20}"
+             required maxlength="30" size="33"
+             placeholder="1 a 20 caracteres">
+    </label>
+    <br><output id="salidaNombre"></output>
+  </p>
+  <p>
+    <label accesskey="A">
+      Apellido Paterno<br>
+      <input name="apellidopaterno" type="text" autofocus pattern=".{1,20}"
+             required maxlength="30" size="33"
+             placeholder="1 a 20 caracteres">
+    </label>
+    <br><output id="salidaApellidopaterno"></output>
+  </p>
+  <p>
+    <label accesskey="M">
+      Apellido Materno<br>
+      <input name="apellidomaterno" type="text" autofocus pattern=".{1,20}"
+             required maxlength="30" size="33"
+             placeholder="1 a 20 caracteres">
+    </label>
+    <br><output id="salidaApellidomaterno"></output>
+  </p>
+  <p>
+    <label accesskey="C">
+      Curp<br>
+      <input name="curp" type="text" autofocus pattern=".{1,20}"
+             required maxlength="30" size="33"
+             placeholder="1 a 20 caracteres">
+    </label>
+    <br><output id="salidaCurp"></output>
+  </p>
+  <p>
+    <label accesskey="E">
+      Edad<br>
+      <input name="edad" type="text" autofocus pattern=".{1,20}"
+             required maxlength="30" size="33"
+             placeholder="1 a 3 caracteres">
+    </label>
+    <br><output id="salidaEdad"></output>
+  </p>
+  <p>
+    <label accesskey="T">
+      Teléfono<br>
+      <input name="telefono" type="tel"
+             pattern="\d{10,12}" required maxlength="12" size="15"
+             placeholder="10 a 12 dígitos"
+             >
+    </label>
+    <br><output id="salidaTelefono"></output>
+  </p>
+ <p>
+    <label accesskey="D">
+      Dirección<br>
+      <input name="direccion" type="text" autofocus pattern=".{1,30}"
+             required maxlength="30" size="33"
+             placeholder="1 a 30 caracteres">
+    </label>
+    <br><output id="salidaDireccion"></output>
+  </p>
+   <p>
+    <label accesskey="B">
+      Universidad a la que estas Incrit@<br>
+      <input name="pregunta3" type="text" required list="pregunta3">
+    </label>
+    <br><output id="salidaPregunta3"></output>
+  </p>
+  <p>
+    <label accesskey="F">
+      Matricula<br>
+      <input name="matricula" type="text" autofocus pattern=".{1,30}"
+             required maxlength="30" size="33"
+             placeholder="1 a 30 caracteres">
+    </label>
+    <br><output id="salidaMatricula"></output>
+  </p>
+  <p>
+    <label accesskey="V">
+      ¿Es alergico a algún medicamento?<br>
+      <input name="pregunta1" type="text" required list="pregunta1">
+    </label>
+    <br><output id="salidaPregunta1"></output>
+  </p>
+  <p>
+    <label accesskey="L">
+      ¿Ya ha padecido de Covid-19?<br>
+      <input name="pregunta2" type="text" required list="pregunta2">
+    </label>
+    <br><output id="salidaPregunta2"></output>
+  </p>
+ <p>
+ <input type="submit" value="procesar" accesskey="P">
+ </p> 
+<br>
+<output Id="salida"></output>
+ </br>
+</form>
+<footer>
+  Copyright 2021 @ Arturo Monroy Orea
+</footer>
+<datalist id="pregunta1">
+  <option value="SI">
+  <option value="No">
+</datalist>
   
-      <h1>Registro para la vacunación a estudiantes Universitarios Covid-19 2021</h1>
-    <form id="forma"action="javascript:">
-      <p><em>Formulario de registro.</em></p>
-      <p>
-        <label accesskey="N">
-          Nombre <br>
-          <input name="nombre" type="text" autofocus pattern=".{1,20}"
-                 required maxlength="30" size="33"
-                 placeholder="1 a 20 caracteres">
-        </label>
-        <br><output id="salidaNombre"></output>
-      </p>
-      <p>
-        <label accesskey="A">
-          Apellido Paterno<br>
-          <input name="apellidopaterno" type="text" autofocus pattern=".{1,20}"
-                 required maxlength="30" size="33"
-                 placeholder="1 a 20 caracteres">
-        </label>
-        <br><output id="salidaApellidopaterno"></output>
-      </p>
-      <p>
-        <label accesskey="M">
-          Apellido Materno<br>
-          <input name="apellidomaterno" type="text" autofocus pattern=".{1,20}"
-                 required maxlength="30" size="33"
-                 placeholder="1 a 20 caracteres">
-        </label>
-        <br><output id="salidaApellidomaterno"></output>
-      </p>
-      <p>
-        <label accesskey="C">
-          Curp<br>
-          <input name="curp" type="text" autofocus pattern=".{1,20}"
-                 required maxlength="30" size="33"
-                 placeholder="1 a 20 caracteres">
-        </label>
-        <br><output id="salidaCurp"></output>
-      </p>
-      <p>
-        <label accesskey="E">
-          Edad<br>
-          <input name="edad" type="text" autofocus pattern=".{1,20}"
-                 required maxlength="30" size="33"
-                 placeholder="1 a 3 caracteres">
-        </label>
-        <br><output id="salidaEdad"></output>
-      </p>
-      <p>
-        <label accesskey="T">
-          Teléfono<br>
-          <input name="telefono" type="tel"
-                 pattern="\d{10,12}" required maxlength="12" size="15"
-                 placeholder="10 a 12 dígitos"
-                 >
-        </label>
-        <br><output id="salidaTelefono"></output>
-      </p>
-     <p>
-        <label accesskey="D">
-          Dirección<br>
-          <input name="direccion" type="text" autofocus pattern=".{1,30}"
-                 required maxlength="30" size="33"
-                 placeholder="1 a 30 caracteres">
-        </label>
-        <br><output id="salidaDireccion"></output>
-      </p>
-       <p>
-        <label accesskey="B">
-          Universidad a la que estas Incrit@<br>
-          <input name="pregunta3" type="text" required list="pregunta3">
-        </label>
-        <br><output id="salidaPregunta3"></output>
-      </p>
-      <p>
-        <label accesskey="F">
-          Matricula<br>
-          <input name="matricula" type="text" autofocus pattern=".{1,30}"
-                 required maxlength="30" size="33"
-                 placeholder="1 a 30 caracteres">
-        </label>
-        <br><output id="salidaMatricula"></output>
-      </p>
-      <p>
-        <label accesskey="V">
-          ¿Es alergico a algún medicamento?<br>
-          <input name="pregunta1" type="text" required list="pregunta1">
-        </label>
-        <br><output id="salidaPregunta1"></output>
-      </p>
-      <p>
-        <label accesskey="L">
-          ¿Ya ha padecido de Covid-19?<br>
-          <input name="pregunta2" type="text" required list="pregunta2">
-        </label>
-        <br><output id="salidaPregunta2"></output>
-      </p>
-     <p>
-     <input type="submit" value="procesar" accesskey="P">
-     </p> 
-    <br>
-    <output Id="salida"></output>
-     </br>
-    </form>
-    <footer>
-      Copyright 2021 @ Arturo Monroy Orea
-    </footer>
-    <datalist id="pregunta1">
-      <option value="SI">
-      <option value="No">
-    </datalist>
+ <datalist id="pregunta2">
+  <option value="SI">
+  <option value="No">
+</datalist>
+  
+ <datalist id="pregunta3">
+ <option value="UNAM">
+ <option value="IPN">
+ <option value="UAM">
+ <option value="ITESM">
+</datalist>
+ <script src="js/datos.js"></script>
       
-     <datalist id="pregunta2">
-      <option value="SI">
-      <option value="No">
-    </datalist>
-      
-     <datalist id="pregunta3">
-     <option value="UNAM">
-     <option value="IPN">
-     <option value="UAM">
-     <option value="ITESM">
-    </datalist>
-     <script src="js/datos.js"></script>
   </body>
 </html>
