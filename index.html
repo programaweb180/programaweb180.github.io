@@ -18,7 +18,8 @@
   <body>
     
 <h1>Registro para la vacunación a estudiantes Universitarios Covid-19 2021</h1>
-<form id="forma"action="javascript:">
+<form 
+action="javascript:agrega();">
   <p><em>Formulario de registro.</em></p>
   <p>
     <label accesskey="N">
@@ -141,6 +142,89 @@
  <option value="ITESM">
 </datalist>
  <script src="js/datos.js"></script>
+      <script>
+     
+      let usuario = "";
+     
+      const auth = firebase.auth();
       
+      const provider = new firebase.auth.GoogleAuthProvider();
+  
+      provider.setCustomParameters({ prompt: "select_account" });
+  
+      auth.onAuthStateChanged(
+  
+        async usuarioAuth => {
+          if (usuarioAuth && usuarioAuth.email) {
+            
+            usuario = usuarioAuth.email;
+            
+            muestraDatos();
+          } else {
+            
+            await auth.signInWithRedirect(provider);
+          }
+        },
+      
+        procesaError
+      );
+     
+      const firestore = firebase.firestore();
+      
+      function agrega() {
+    
+        firestore.collection("REGISTRO").add({
+          USUARIO: usuario,
+         
+          NOMBRE: nombre.value.trim(),
+          
+          TIMESTAMP: firebase.firestore.FieldValue.serverTimestamp()
+        });
+      }
+     
+      function muestraDatos() {
+      
+        firestore.collection("Registro").orderBy("TIMESTAMP", "desc")
+          .onSnapshot(
+            querySnapshot => {
+        
+              mensajes.innerHTML = "";
+   
+              querySnapshot.forEach(doc => {
+    
+                const data = doc.data();
+                
+                var d = data.TIMESTAMP.toDate(),
+                dformat = [d.getDate(), d.getMonth()+1, d.getFullYear()].join('/')+' '+
+                          [d.getHours(),d.getMinutes(),d.getSeconds()].join(':');
+              
+                Datos.innerHTML +=
+                  `<li><u>${cod(data.USUARIO)}</u> ${dformat}<br>${cod(data.TEXTO)}</li>`;
+              })
+            },
+         
+            e => {
+              procesaError(e);
+             
+              muestraDatos();
+            }
+          )
+      }
+
+     
+      function procesaError(e) {
+        console.log(e);
+        alert(e.message);
+      }
+
+     
+      const codMap = Object.freeze(new Map([['&', '&amp;'], ['<', '&lt;'],
+      ['>', '&gt;'], ['"', '&quot;'], ["'", '&#039;']]));
+
+    
+      function cod(texto) {
+        return (texto || "").replace(/[&<>"']/g, letra => codMap.get(letra));
+      }
+    </script>
   </body>
 </html>
