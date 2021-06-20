@@ -1,0 +1,6 @@
+
+      html {font-family: sans-serif; text-align: center}
+      body {display: inline-block; text-align: center}
+      *:required {border: thin solid orange}
+      footer {font-size: small}
+ 
